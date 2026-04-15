@@ -41,29 +41,29 @@ This project includes:
 
 ```mermaid
 flowchart TD
-    Browser[Browser UI<br/>index.html / dashboard.html] --> AuthJS[public/auth.js]
-    Browser --> DashboardJS[public/dashboard.js]
+    Browser["Browser UI<br/>index.html / dashboard.html"] --> AuthJS["public/auth.js"]
+    Browser --> DashboardJS["public/dashboard.js"]
 
-    AuthJS --> AuthAPI[/api/v1/auth]
-    DashboardJS --> TaskAPI[/api/v1/tasks]
+    AuthJS --> AuthAPI["/api/v1/auth"]
+    DashboardJS --> TaskAPI["/api/v1/tasks"]
 
-    AuthAPI --> AuthRoutes[routes/authRoutes.js]
-    TaskAPI --> TaskRoutes[routes/taskRoutes.js]
+    AuthAPI --> AuthRoutes["routes/authRoutes.js"]
+    TaskAPI --> TaskRoutes["routes/taskRoutes.js"]
 
-    AuthRoutes --> AuthController[controllers/authController.js]
-    TaskRoutes --> AuthMiddleware[middleware/authMiddleware.js]
-    AuthMiddleware --> TaskController[controllers/taskController.js]
+    AuthRoutes --> AuthController["controllers/authController.js"]
+    TaskRoutes --> AuthMiddleware["middleware/authMiddleware.js"]
+    AuthMiddleware --> TaskController["controllers/taskController.js"]
 
-    AuthController --> UserModel[models/User.js]
-    TaskController --> TaskModel[models/Task.js]
+    AuthController --> UserModel["models/User.js"]
+    TaskController --> TaskModel["models/Task.js"]
 
     UserModel --> MongoDB[(MongoDB)]
     TaskModel --> MongoDB
 
-    AuthController --> JWTUtils[utils/jwt.js]
-    TaskController --> Validators[utils/validators.js]
+    AuthController --> JWTUtils["utils/jwt.js"]
+    TaskController --> Validators["utils/validators.js"]
     AuthMiddleware --> JWTUtils
-    App[app.js] --> Swagger[/api-docs]
+    App["app.js"] --> Swagger["/api-docs"]
 ```
 
 ### Folder map
